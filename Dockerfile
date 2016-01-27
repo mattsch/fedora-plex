@@ -4,7 +4,7 @@ MAINTAINER Matthew Schick <matthew.schick@gmail.com>
 # Install required packages
 RUN dnf install -yq procps-ng \
                     python-pip \
-                    python-setuptools \ &&
+                    python-setuptools && \
     dnf clean all
 
 # Set uid/gid (override with the '-e' flag), 1000/1000 used since it's the
