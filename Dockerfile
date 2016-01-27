@@ -2,17 +2,9 @@ FROM mattsch/fedora-rpmfusion:22
 MAINTAINER Matthew Schick <matthew.schick@gmail.com>
 
 # Install required packages
-RUN dnf install -yq procps-ng && \
-#                    git \
-#                    pyOpenSSL \
-#                    python-paramiko \
-#                    python-pillow \
-#                    python-devel \
-#                    python-pip \
-#                    procps-ng \
-#                    redhat-rpm-config \
-#                    smartmontools \
-#                    zlib-devel && \
+RUN dnf install -yq procps-ng \
+                    python-pip \
+                    python-setuptools \ &&
     dnf clean all
 
 # Set uid/gid (override with the '-e' flag), 1000/1000 used since it's the
