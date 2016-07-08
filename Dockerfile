@@ -1,4 +1,4 @@
-FROM mattsch/fedora-rpmfusion:latest
+FROM mattsch/fedora-rpmfusion:24
 MAINTAINER Matthew Schick <matthew.schick@gmail.com>
 
 # Install required packages
@@ -14,7 +14,7 @@ ENV LUID=1000 LGID=1000 PLEX_VERSION="1.0.0.2261-a17e99e"
 # Create the plex user/group
 RUN groupadd -g $LGID plex && \
     useradd -c 'Plex User' -s /bin/bash -m -d /usr/lib/plexmediaserver -g $LGID -u $LUID plex
-    
+
 # Need a config and storage volume, expose proper port
 VOLUME /config /storage
 EXPOSE 32400
@@ -23,7 +23,6 @@ EXPOSE 32400
 COPY start_pms.sh install-plex.sh run-plex.sh /bin/
 
 RUN /bin/install-plex.sh
- 
+
 # Run our script
 CMD ["/bin/run-plex.sh"]
-
