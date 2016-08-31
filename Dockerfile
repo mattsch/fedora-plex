@@ -9,7 +9,7 @@ RUN dnf install -yq procps-ng \
 
 # Set uid/gid (override with the '-e' flag), 1000/1000 used since it's the
 # default first uid/gid on a fresh Fedora install
-ENV LUID=1000 LGID=1000 PLEX_VERSION="1.0.3.2461-35f0caa"
+ENV LUID=1000 LGID=1000 PLEX_VERSION="1.1.3.2700-6f64a8d"
 
 # Create the plex user/group
 RUN groupadd -g $LGID plex && \
